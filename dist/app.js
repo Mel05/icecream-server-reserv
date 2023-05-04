@@ -15,7 +15,7 @@ dotenv_1.default.config();
 exports.PORT = process.env.PORT;
 const DB_PATH = process.env.DB_PATH;
 mongoose_1.default
-    .connect(`${DB_PATH}`)
+    .connect('mongodb://' + DB_PATH)
     .then(() => console.log(chalk_1.default.yellow('BD works unlike me')))
     .then(() => console.log(chalk_1.default.yellow('OGC')))
     .catch(err => console.log(chalk_1.default.red('BD error', err)));
